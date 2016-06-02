@@ -8,7 +8,7 @@ app = Flask(__name__, static_url_path='')
 
 @app.route('/')
 def root():
-    return app.send_static_file('osm-map-demo.html')
+    return app.send_static_file('index.html')
 
 @app.route('/get')
 def getLiquorStoreDemo():
@@ -22,4 +22,3 @@ def getLiquorStoreDemo():
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=8080)
-    pass

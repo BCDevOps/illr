@@ -27,8 +27,8 @@ def getLiquorStoreDemo():
     rl.calcInitialRoute(demoPoints)
     rl.getBB()
     rl.getMeTheLiquor()
-    rl.getBestRoute()    
-    return 'SUCCESS'
+    kml = rl.getBestRoute()    
+    return kml
 
 @app.route("/test")
 def test():

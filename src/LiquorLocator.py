@@ -135,6 +135,7 @@ class RouteLiquor(object):
         #print 'raw', result.text
         fh.write(result.text)
         fh.close()
+        return result.text
            
 
 if __name__ == '__main__':

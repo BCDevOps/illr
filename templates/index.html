@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <meta charset=utf-8 />
+  <title>Leaflet.fullscreen</title>
+  <link href='https://www.mapbox.com/base/latest/base.css' rel='stylesheet' />
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+  <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/leaflet-plugins/1.6.1/layer/vector/KML.js"></script>
+  <link href='cdn/leaflet.fullscreen.css' rel='stylesheet' />
+  <script src='cdn/Leaflet.fullscreen.min.js'></script>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        html, body, #map {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<div id='map'></div>
+<script>
+  var map = L.map('map', {
+    fullscreenControl: {
+        pseudoFullscreen: true
+    }
+  }).setView([55, -126], 5);
+
+    var positron = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
+    }).addTo(map);
+    var kmlLayer = new L.KML("result.kml", {async: true});                                                          
+    kmlLayer.on("loaded", function(e) { 
+    map.fitBounds(e.target.getBounds());
+    });
+    map.addLayer(kmlLayer);
+</script>
+</body>
+</html>

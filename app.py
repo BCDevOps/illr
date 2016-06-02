@@ -1,6 +1,10 @@
 from flask import Flask
 app = Flask(__name__)
 import LiquorLocator
+import site
+dir2Add = './src'
+site.addsitedir(dir2Add)
+
 
 @app.route("/")
 def hello():
@@ -12,9 +16,7 @@ def getLiquorStoreDemo():
     rl.calcInitialRoute(testpoints)
     rl.getBB()
     rl.getMeTheLiquor()
-    rl.getBestRoute()
-
-    
+    rl.getBestRoute()    
     
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=8080)

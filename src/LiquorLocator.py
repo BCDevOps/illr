@@ -92,6 +92,8 @@ class RouteLiquor(object):
         if not bb:
             bb = self.initalrouteBB
         liquoreStoreFilePath =  os.path.join('..', self.liquorStoreFile)
+        if not os.path.exists(liquoreStoreFilePath):
+            liquoreStoreFilePath =  os.path.join('.', self.liquorStoreFile)
         # slurp the whole file into json 
         fh = open(liquoreStoreFilePath, 'r')
         jsonObj = json.loads(fh.read())

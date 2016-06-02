@@ -130,11 +130,19 @@ class RouteLiquor(object):
         #print 'result', result
         #print 'json', result.json
         kmlPath = os.path.join('..', self.resultKml)
+        kmlPath = self.resultKml
+
         print 'writing', kmlPath
         fh = open(kmlPath, 'w')
         #print 'raw', result.text
         fh.write(result.text)
         fh.close()
+        kmlPath = os.path.join('templates', self.resultKml)
+        fh = open(kmlPath, 'w')
+        #print 'raw', result.text
+        fh.write(result.text)
+        fh.close()
+
         return result.text
            
 

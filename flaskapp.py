@@ -6,7 +6,6 @@ import site
 dir2Add = './src'
 site.addsitedir(dir2Add)
 import LiquorLocator
-import jsonify
 
 
 
@@ -29,7 +28,7 @@ def getLiquorStoreDemo():
     rl.getBB()
     rl.getMeTheLiquor()
     rl.getBestRoute()    
-    return jsonify(result={"status": 200})
+    return 'SUCCESS'
 
 @app.route("/test")
 def test():

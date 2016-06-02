@@ -10,6 +10,7 @@ app = Flask(__name__, static_url_path='')
 def root():
     return app.send_static_file('osm-map-demo.html')
 
+@app.route('/get')
 def getLiquorStoreDemo():
     demoPoints = [-126.844567, 49.97859, -122.799997, 58.925305]
     LiquorLocator.RouteLiquor(demoPoints)

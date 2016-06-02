@@ -13,7 +13,7 @@ def root():
 @app.route('/get')
 def getLiquorStoreDemo():
     demoPoints = [-126.844567, 49.97859, -122.799997, 58.925305]
-    LiquorLocator.RouteLiquor(demoPoints)
+    rl = LiquorLocator.RouteLiquor(demoPoints)
     rl.calcInitialRoute(testpoints)
     rl.getBB()
     rl.getMeTheLiquor()

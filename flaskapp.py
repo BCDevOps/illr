@@ -24,7 +24,7 @@ def serveStaticResource(resource):
 def getLiquorStoreDemo():
     demoPoints = [-126.844567, 49.97859, -122.799997, 58.925305]
     rl = LiquorLocator.RouteLiquor(demoPoints)
-    rl.calcInitialRoute(testpoints)
+    rl.calcInitialRoute(demoPoints)
     rl.getBB()
     rl.getMeTheLiquor()
     rl.getBestRoute()    

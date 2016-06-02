@@ -8,6 +8,7 @@ site.addsitedir(dir2Add)
 import LiquorLocator
 
 
+
 app = Flask(__name__)
 app.config.from_pyfile('flaskapp.cfg')
 
